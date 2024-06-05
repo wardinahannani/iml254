@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WH's Contact</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+    }
+
+    .frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #D9A863;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      height: auto;
+    }
+
+    .text {
+      position: absolute;
+      bottom: 150px;
+      right: 20px;
+      color: black;
+      font-size: 24px;
+      font-family: monospace;
+      width: calc(45% - 40px);
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+
+    .menu {
+      position: absolute;
+      top: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      background-color: #C49E6D;
+      padding: 5px 20px;
+      border-radius: 0px;
+      text-align: center;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+      white-space: nowrap;
+    }
+
+    .menu li {
+      display: inline;
+      margin-left: 10px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-family: monospace;
+    }
+
+    .menu li a img {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      filter: invert(100%);
+    }
+
+    .banner {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100px;
+      background-color: #B58C55;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 36px;
+      line-height: 100px;
+      font-family: monospace;
+      font-weight: bold;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #B58C55;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .menu .selected {
+      background-color: #8c6e41;
+      border-radius: 5px;
+    }
+
+    .contact-box {
+      background: #fff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: calc(100% - 40px);
+      margin: 20px auto;
+      position: relative;
+      top: 170px;
+    }
+
+    .contact-box h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .contact-box label {
+      display: block;
+      margin-top: 10px;
+      color: #666;
+    }
+
+    .contact-box .form-group {
+      margin-bottom: 20px;
+    }
+
+    .contact-box input[type="text"],
+    .contact-box input[type="email"],
+    .contact-box textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .contact-box button {
+      display: block;
+      width: 100%;
+      background: #B58C55; /* Changed color */
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .contact-box button:hover {
+      background: #a27848; /* Slightly darker color for hover effect */
+    }
+
+    .contact-logo {
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      bottom: 35px;
+    }
+
+    .contact-logo a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .contact-logo .icon {
+      vertical-align: middle;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="banner">WARDINA HANNANI's PERSONAL WEBSITE</div>
+    <img src="image/logo.png" alt="Logo" class="logo">
+    <div class="text"></div>
+    <div class="menu">
+      <ul>
+        <li><a href="home.html" onclick="selectMenuItem(this)"><img src="image/home.png"></a></li>
+        <li>|</li>
+        <li><a href="aboutme.html" onclick="selectMenuItem(this)">About Me</a></li>
+        <li>|</li>
+        <li><a href="education.html" onclick="selectMenuItem(this)">Education</a></li>
+        <li>|</li>
+        <li><a href="family.html" onclick="selectMenuItem(this)">Family</a></li>
+        <li>|</li>
+        <li><a href="friends.html" onclick="selectMenuItem(this)">Friends</a></li>
+        <li>|</li>
+        <li><a href="hobby.html" onclick="selectMenuItem(this)">Hobby</a></li>
+        <li>|</li>
+        <li><a href="experience.html" onclick="selectMenuItem(this)">Experience</a></li>
+        <li>|</li>
+        <li><a href="#" onclick="selectMenuItem(this)" class="selected">Contact</a></li>
+      </ul>
+    </div>
+    <div class="contact-box">
+      <h2>Contact Me</h2>
+      <form id="form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="444cc125-4d09-48bf-a275-6829aa16e382">
+
+        <div class="form-group">
+          <label for="name"><b>Name</b></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email"><b>Email</b></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message"><b>Message</b></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        <button type="submit">Submit Form</button>
+        <div id="result"></div>
+      </form>
+    </div>
+
+    <div class="contact-logo">
+      <a href="#" onclick="openWhatsApp()">
+        <img src="image/ws.png" alt="WhatsApp" class="icon" width="50" height="50">
+      </a>
+      <a href="#" onclick="openInstagram()">
+        <img src="image/ig.png" alt="Instagram" class="icon" width="35" height="35">
+      </a>
+      <a href="#" onclick="openTwitter()">
+        <img src="image/x.png" alt="Twitter" class="icon" width="35" height="35">
+      </a>
+      <a href="#" onclick="openTelegram()">
+        <img src="image/tele.png" alt="Telegram" class="icon" width="35" height="35">
+      </a>
+    </div>
+
+    <footer class="footer">
+      &copy; 2024 WARDINA HANNANI. All rights reserved.
+    </footer>
+  </div>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
+
+<script>
+  function selectMenuItem(item) {
+    // Remove the 'selected' class from all menu items
+    const menuItems = document.querySelectorAll('.menu li a');
+    menuItems.forEach((menuItem) => {
+      menuItem.classList.remove('selected');
+    });
+
+    // Add the 'selected' class to the clicked menu item
+    item.classList.add('selected');
+  }
+
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    result.innerHTML = "Please wait...";
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: json
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        result.innerHTML = "Form submitted successfully";
+      } else {
+        console.log(response);
+        result.innerHTML = json.message;
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      result.innerHTML = "Something went wrong!";
+    })
+    .then(function() {
+      form.reset();
+      setTimeout(() => {
+        result.style.display = "none";
+      }, 3000);
+    });
+  });
+
+  function openWhatsApp() {
+    window.open('https://wa.me/+601110529496', '_blank');
+  }
+
+  function openInstagram() {
+    window.open('https://www.instagram.com/wardinahannani?igsh=MXRwdWp6MnlzcHQwNA==', '_blank');
+  }
+
+  function openTwitter() {
+    window.open('https://x.com/wrdinahnani', '_blank');
+  }
+
+  function openTelegram() {
+    window.open('https://t.me/wardinahannani', '_blank');
+  }
+</script>
+</body>
+</html>
