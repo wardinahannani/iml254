@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WH's Friends</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+    }
+
+    .frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #D9A863;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      height: auto;
+    }
+
+    .text {
+      position: absolute;
+      top: 200px; /* Adjust the top position as needed */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Center horizontally */
+      color: white;
+      font-size: 24px;
+      font-family: monospace;
+      width: calc(100% - 40px); /* Adjust width */
+      text-align: center; /* Center text */
+      white-space: pre-wrap; /* Maintain preformatted appearance */
+    }
+
+    .menu {
+      position: absolute;
+      top: 140px; /* Adjusted distance from the top */
+      left: 50%; /* Centering */
+      transform: translateX(-50%);
+      width: calc(100% - 40px); /* Adjusted width */
+      background-color: #C49E6D; /* Adjusted color */
+      padding: 5px 20px; /* Padding for the menu items */
+      border-radius: 0px; /* Rounded corners */
+      text-align: center; /* Center-align the menu items */
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+      white-space: nowrap; /* Prevent wrapping */
+    }
+
+    .menu li {
+      display: inline;
+      margin-left: 10px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-family: monospace;
+    }
+
+    .menu li a img {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      filter: invert(100%);
+    }
+
+    .menu .selected {
+      background-color: #8c6e41;
+      border-radius: 5px;
+    }
+
+    .banner {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100px;
+      background-color: #B58C55;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 36px;
+      line-height: 100px;
+      font-family: monospace;
+      font-weight: bold;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #B58C55;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: calc(100% - 140px); /* Adjust the height to consider the banner and footer height */
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .table-container {
+      width: 90%;
+      max-width: 1400px;
+      margin-top: 190px; /* Adjust this value to move the table down */
+      margin-right: 0%;
+    }
+
+    table {
+      width: 100%;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 16px;
+      border-spacing: 0px; /* Add spacing between cells */
+      border-collapse: separate;
+      border-radius: 15px; /* Rounded corners for the table */
+      overflow: hidden; /* To apply the border-radius */
+      border: 10px solid white; /* Outer border */
+    }
+
+    th, td {
+      padding: 5px;
+      text-align: center;
+      vertical-align: middle;
+      text-align: justify; /* Justify text */
+      background-color: #D9A863; /* Background color for table cells */
+      border: none; /* Remove the inside borders */
+    }
+
+    .table-container table td {
+      text-align: center;
+    }
+
+    .resized-image {
+      width: 170px; /* Set your desired width */
+      height: auto; /* Maintain the aspect ratio */
+      display: block;
+      margin: auto; /* Center the image */
+    }
+
+    .table-title {
+      position: relative;
+      width: 100%;
+      background-color: #D9A863;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      padding: 5px 0;
+      margin-bottom: -10px; /* Negative margin to pull the table up */
+    }
+
+    .table-title::before {
+      content: "GET TO KNOW WHO'S MY FRIENDS";
+      position: absolute;
+      bottom: -20px; /* Adjust this value to move the text above the border */
+      left: 50px; /* Adjust this value to move the text horizontally */
+      font-size: 25px;
+      font-weight: bold;
+      background-color: #D9A863;
+      padding: 0 10px;
+    }
+
+     #audioControlBtn {
+       position: fixed;
+       bottom: 45px;
+       left: 630px;
+       z-index: 1001;
+       background-color: #B58C55;
+       color: #333;
+       border: none;
+       outline: none;
+       cursor: pointer;
+       padding: 10px;
+       border-radius: 5px;
+       color: white
+     }
+
+      #audioControlBtn:hover {
+       background-color: #C49E6D;
+     }
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="frame">
+    <div class="banner">WARDINA HANNANI's PERSONAL WEBSITE</div>
+    <img src="image/logo.png" alt="Logo" class="logo">
+    <div class="text"></div>
+    <div class="menu">
+      <ul>
+        <li><a href="home.html" onclick="selectMenuItem(this)"><img src="image/home.png"></a></li>
+        <li>|</li>
+        <li><a href="aboutme.html" onclick="selectMenuItem(this)">About Me</a></li>
+        <li>|</li>
+        <li><a href="education.html" onclick="selectMenuItem(this)">Education</a></li>
+        <li>|</li>
+        <li><a href="family.html" onclick="selectMenuItem(this)">Family</a></li>
+        <li>|</li>
+        <li><a href="#" onclick="selectMenuItem(this)">Friends</a></li>
+        <li>|</li>
+        <li><a href="hobby.html" onclick="selectMenuItem(this)">Hobby</a></li>
+        <li>|</li>
+        <li><a href="experience.html" onclick="selectMenuItem(this)">Experience</a></li>
+        <li>|</li>
+        <li><a href="contact.html" onclick="selectMenuItem(this)">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="table-container">
+        <div class="table-title"></div>
+        <table border="2">
+          <tr>
+            <td colspan="5"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="slideshow-container" id="slideshow1">
+                <img src="image/mbtlspam.jpg" class="resized-image" alt="Friend Image 1">
+                <img src="image/mbtlspam1.jpg" class="resized-image" alt="Friend Image 2" style="display:none;">
+                <img src="image/mbtlspam2.jpg" class="resized-image" alt="Friend Image 3" style="display:none;">
+                <img src="image/mbtlspam3.jpg" class="resized-image" alt="Friend Image 4" style="display:none;">
+                <img src="image/mbtlspam4.jpg" class="resized-image" alt="Friend Image 5" style="display:none;">
+                <img src="image/mbtlspam5.jpg" class="resized-image" alt="Friend Image 6" style="display:none;">
+              </div>
+            </td>
+            <td colspan="2">
+              <div class="slideshow-container" id="slideshow2">
+                <img src="image/meng.jpg" class="resized-image" alt="Friend Image 1">
+                <img src="image/meng1.jpg" class="resized-image" alt="Friend Image 2" style="display:none;">
+                <img src="image/meng2.jpg" class="resized-image" alt="Friend Image 3" style="display:none;">
+                <img src="image/meng3.jpg" class="resized-image" alt="Friend Image 4" style="display:none;">
+                <img src="image/meng4.jpg" class="resized-image" alt="Friend Image 5" style="display:none;">
+              </div>
+            </td>
+            <td colspan="2">
+              <div class="slideshow-container" id="slideshow3">
+                <img src="image/diploma.jpg" class="resized-image" alt="Friend Image 1">
+                <img src="image/diploma1.jpg" class="resized-image" alt="Friend Image 2" style="display:none;">
+                <img src="image/diploma2.jpg" class="resized-image" alt="Friend Image 3" style="display:none;">
+                <img src="image/diploma3.jpg" class="resized-image" alt="Friend Image 4" style="display:none;">
+                <img src="image/diploma4.jpg" class="resized-image" alt="Friend Image 5" style="display:none;">
+                <img src="image/diploma5.jpg" class="resized-image" alt="Friend Image 6" style="display:none;">
+              </div>
+            </td>
+          </tr>
+          <tr>
+          <td colspan="2">
+          <ul>
+            <li>We've been friends for almost 8 years.</li>
+            <li>We have 7 members in our friendship.</li>
+            <li>There are 2 older sisters, 4 youngest sister, and I’m the only second child.</li>
+          </td>
+          <td colspan="2">
+          <ul>
+            <li>She's my friend since I was 15 years old.</li>
+            <li>We became friends because we have the same interest in reading novels, same type of k-drama genres.</li>
+            <li>Our favorite spot to hangout is beach.</li>
+          </td>
+          <td colspan="2">
+          <ul>
+            <li>These are my classmates during the whole diploma semesters.</li>
+            <li>I’m just hoping that we’ll still being friends forever even after we’ve finished our diploma.</li>
+          </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <footer class="footer">
+      &copy; 2024 WARDINA HANNANI. All rights reserved.
+    </footer>
+  </div>
+
+  <button id="audioControlBtn">Play Audio</button>
+  <audio id="backgroundAudio" src="audio/friends.mp3" loop></audio>
+
+  <script>
+    function selectMenuItem(item) {
+      // Remove the 'selected' class from all menu items
+      const menuItems = document.querySelectorAll('.menu li a');
+      menuItems.forEach((menuItem) => {
+        menuItem.classList.remove('selected');
+      });
+
+      // Add the 'selected' class to the clicked menu item
+      item.classList.add('selected');
+    }
+
+    function startSlideshow(containerId, interval) {
+      const container = document.getElementById(containerId);
+      const images = container.getElementsByTagName('img');
+      let currentIndex = 0;
+
+      setInterval(() => {
+        images[currentIndex].style.display = 'none';
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].style.display = 'block';
+      }, interval);
+    }
+
+    window.onload = function() {
+      startSlideshow('slideshow1', 2000);
+      startSlideshow('slideshow2', 2000);
+      startSlideshow('slideshow3', 2000);
+    }
+
+    var audio = document.getElementById("backgroundAudio");
+       var audioControlBtn = document.getElementById("audioControlBtn");
+
+       audioControlBtn.addEventListener("click", function() {
+           if (audio.paused) {
+               audio.play();
+               audioControlBtn.textContent = "Pause Audio";
+           } else {
+               audio.pause();
+               audioControlBtn.textContent = "Play Audio";
+           }
+     });
+
+  </script>
+
+</body>
+</html>
