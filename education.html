@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WH's Education</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+    }
+
+    .frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #D9A863;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      height: auto;
+    }
+
+    .banner {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 100px;
+      background-color: #B58C55;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 36px;
+      line-height: 100px;
+      font-family: monospace;
+      font-weight: bold;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #B58C55;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .menu {
+      position: absolute;
+      top: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      background-color: #C49E6D;
+      padding: 5px 20px;
+      border-radius: 0px;
+      text-align: center;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-family: monospace;
+      white-space: nowrap;
+    }
+
+    .menu li {
+      display: inline;
+      margin-left: 10px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-family: monospace;
+    }
+
+    .menu li a img {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      filter: invert(100%);
+    }
+
+    .menu .selected {
+      background-color: #8c6e41;
+      border-radius: 5px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: calc(100% - 140px); /* Adjust the height to consider the banner and footer height */
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .table-container {
+      width: 95%;
+      max-width: 1400px;
+      margin-top: 130px; /* Adjust this value to move the table down */
+      margin-right: 3.5%;
+    }
+
+    table {
+      width: 100%;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 16px;
+      border-spacing: 8px; /* Add spacing between cells */
+      border-collapse: separate;
+      border-radius: 15px; /* Rounded corners for the table */
+      overflow: hidden; /* To apply the border-radius */
+      border: 10px solid white; /* Outer border */
+    }
+
+    table, th, td {
+      border: 2px solid white;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .resized-image {
+      width: 200px; /* Set your desired width */
+      height: auto; /* Maintain the aspect ratio */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="banner">WARDINA HANNANI's PERSONAL WEBSITE</div>
+    <img src="image/logo.png" alt="Logo" class="logo">
+    <div class="menu">
+      <ul>
+        <li><a href="home.html" onclick="selectMenuItem(this)"><img src="image/home.png"></a></li>
+        <li>|</li>
+        <li><a href="aboutme.html" onclick="selectMenuItem(this)">About Me</a></li>
+        <li>|</li>
+        <li><a href="#" onclick="selectMenuItem(this)">Education</a></li>
+        <li>|</li>
+        <li><a href="family.html" onclick="selectMenuItem(this)">Family</a></li>
+        <li>|</li>
+        <li><a href="friends.html" onclick="selectMenuItem(this)">Friends</a></li>
+        <li>|</li>
+        <li><a href="hobby.html" onclick="selectMenuItem(this)">Hobby</a></li>
+        <li>|</li>
+        <li><a href="experience.html" onclick="selectMenuItem(this)">Experience</a></li>
+        <li>|</li>
+        <li><a href="contact.html" onclick="selectMenuItem(this)">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="table-container">
+        <table border="2" bgcolor="white">
+          <tr bgcolor="#D9A863">
+            <td colspan="5" bgcolor="#D9A863"><b><center>Wardina's Education Journey!</center></b></td>
+            <td rowspan="4"><b><pre><center>Exam Result!</center></b>
+              <li><b><abbr title="Ujian Penilaian Sekolah Rendah Islam">UPSRI:</b></abbr> 8A
+              <li><b><abbr title="Ujian Penilaian Kelas Kafa">UPKK:</b></abbr> 8A
+              <li><b><abbr title="Ujian Penilaian Sekolah Rendah">UPSR:</b></abbr> 2B 4C
+              <li><b><abbr title="Peperiksaan Tingkatan 3">PT3:</b></abbr> 5A 2B 1C 1D
+              <li><b><abbr title="Sijil Pelajaran Malaysia">SPM:</b></abbr> 5A 3B 1C
+            </pre</td>
+          </tr>
+          <tr bgcolor="#D9A863">
+            <td><img src="image/taska.jpg" class="resized-image"></td>
+            <td><img src="image/sraib.jpg" class="resized-image"></td>
+            <td><img src="image/smaib.jpg" class="resized-image"></td>
+            <td><img src="image/smkp.jpg" class="resized-image"></td>
+            <td><img src="image/uitm.jpg" class="resized-image"></td>
+          </tr>
+          <tr bgcolor="#D9A863">
+            <td>Taska As-Safiinah</td>
+            <td>Sekolah Rendah Islam Al-Irsyad Balok</td>
+            <td>Sekolah Menengah Islam Al-Irsyad Balok</td>
+            <td>Sekolah Menengah Kebangsaan Pelabuhan</td>
+            <td>Universiti Teknologi Mara, Kedah</td>
+          </tr>
+          <tr bgcolor="#D9A863">
+            <td>3-6 y/o, 2007-2010</td>
+            <td>7-12 y/o, 2011-2016</td>
+            <td>13-14 y/o, 2017-2018</td>
+            <td>15-18 y/o, 2019-2022</td>
+            <td>18-21 y/o, 2022-2025</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      &copy; 2024 WARDINA HANNANI. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function selectMenuItem(item) {
+      // Remove the 'selected' class from all menu items
+      const menuItems = document.querySelectorAll('.menu li a');
+      menuItems.forEach((menuItem) => {
+        menuItem.classList.remove('selected');
+      });
+
+      // Add the 'selected' class to the clicked menu item
+      item.classList.add('selected');
+    }
+  </script>
+</body>
+</html>
