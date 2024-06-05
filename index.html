@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WH's Index</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #B58C55;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .logo-container {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    #logo {
+      width: 100px; /* Adjust to the actual size used on other pages */
+      transition: width 1s ease-in-out, top 1s ease-in-out, left 1s ease-in-out, transform 1s ease-in-out;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #logo.animate {
+      width: 300px;
+    }
+    #logo.shrink {
+      width: 100px; /* Adjust to the actual size used on other pages */
+      top: 20px;
+      left: 20px;
+      transform: translate(0, 0);
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo-container">
+    <img src="image/logo.png" alt="Logo" id="logo">
+  </div>
+  <!-- Add other HTML elements as needed -->
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const logo = document.getElementById('logo');
+
+      // Animate logo on page load for index page
+      setTimeout(() => {
+        logo.classList.add('animate');
+      }, 500); // Start animation after a delay
+
+      // Shrink and move the logo to top-left before changing the page
+      setTimeout(() => {
+        logo.classList.remove('animate');
+        logo.classList.add('shrink');
+        setTimeout(() => {
+          window.location.href = 'home.html'; // Change 'home.html' to the desired page
+        }, 1000); // Delay navigation to allow animation to complete
+      }, 2000); // Adjust the time duration as needed (in milliseconds)
+    });
+  </script>
+</body>
+</html>
